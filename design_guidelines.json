@@ -1,0 +1,114 @@
+{
+  "theme": "light",
+  "archetype": "Swiss & High-Contrast (Corporate Variant)",
+  "emotional_tone": "Authoritative, Modern, Elite, Trustworthy",
+  "design_philosophy": "Clean, professional corporate style utilizing sharp typography, bento-grid layouts, and generous negative space to convey authority and stability without feeling stale. Deep navy blue grounds the design, while stark white and cool grey provide structural clarity.",
+  "colors": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#F8F9FA",
+      "tertiary": "#F1F5F9"
+    },
+    "brand": {
+      "primary": "#0A192F",
+      "primary_hover": "#0F2646",
+      "accent": "#64748B"
+    },
+    "text": {
+      "primary": "#0F172A",
+      "secondary": "#475569",
+      "inverse": "#FFFFFF"
+    },
+    "borders": {
+      "default": "#E2E8F0",
+      "focus": "#0A192F"
+    }
+  },
+  "typography": {
+    "font_families": {
+      "heading": "Satoshi, sans-serif",
+      "body": "IBM Plex Sans, sans-serif"
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter font-bold text-[#0F172A]",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-semibold text-[#0F172A]",
+      "h3": "text-xl sm:text-2xl font-medium text-[#0F172A]",
+      "body": "text-base leading-relaxed text-[#475569]",
+      "label": "text-xs tracking-[0.2em] uppercase font-semibold text-[#64748B]"
+    },
+    "rules": [
+      "Headings must use tight letter spacing (tracking-tight or tracking-tighter).",
+      "Overlines/Labels must be uppercase, tiny, and widely spaced.",
+      "Never use Inter for headings."
+    ]
+  },
+  "layout_and_spacing": {
+    "padding_scale": "Use p-8, p-12, p-24 for section padding. Favor generous white space.",
+    "grid_system": "The Bento Grid Protocol for services and features. Use border-collapse style grids for technical/data-heavy sections.",
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "surface_strategy": {
+      "header": "Crystal Glass: backdrop-blur-xl bg-white/80 border-b border-[#E2E8F0] shadow-sm",
+      "cards": "Flat background, 1px solid border (#E2E8F0), no rounded corners (rounded-none or max rounded-sm). Hover: slight shadow-lg and -translate-y-1.",
+      "footer": "Contrast Shift: Deep Navy (#0A192F) background with white/grey text. Massive vertical padding (py-24)."
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#0A192F] text-white hover:bg-[#0F2646] rounded-none px-8 py-4 transition-all duration-300 font-medium",
+      "secondary": "bg-transparent border-2 border-[#0A192F] text-[#0A192F] hover:bg-[#F8F9FA] rounded-none px-8 py-4 transition-all duration-300 font-medium"
+    },
+    "forms": "Use Shadcn customized components. Inputs must have rounded-none, border-[#E2E8F0], and focus:ring-2 focus:ring-[#0A192F].",
+    "navigation": "Sticky top, glassmorphism background, visible links on desktop (no hamburger on desktop), prominent 'Book a Consultation' CTA."
+  },
+  "animations": {
+    "scrolling": "Lenis for smooth scrolling (Mandatory for premium feel).",
+    "reveal": "Framer Motion staggered fade-up for grid items and text blocks on scroll.",
+    "hover": "Subtle border color transitions and minimal Y-axis translation on cards."
+  },
+  "media": {
+    "hero": {
+      "url": "https://images.unsplash.com/photo-1686676104932-3d7b6bbaef52?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBvZmZpY2UlMjBidWlsZGluZyUyMGdsYXNzfGVufDB8fHx8MTc3NjE0NDA1MXww&ixlib=rb-4.1.0&q=85",
+      "description": "Modern glass office building",
+      "instructions": "Use as full-screen or large section background with a bg-[#0A192F]/70 overlay to ensure text contrast."
+    },
+    "founder_portrait": {
+      "url": "https://images.unsplash.com/photo-1649433658557-54cf58577c68?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBpbmRpYW4lMjBtYW4lMjBzdWl0JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc2MTQ0MDUxfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Professional portrait of founder Purnendu Shankar Upadhyay",
+      "instructions": "Use in the About Us section, accompanied by his bio. Display in a strict rectangular frame with a slight offset border for a stylized look."
+    },
+    "about_team": {
+      "url": "https://images.unsplash.com/photo-1758691736975-9f7f643d178e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMG1lZXRpbmclMjBkaXZlcnNlJTIwdGVhbXxlbnwwfHx8fDE3NzYxNDQwNTF8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Diverse group of professionals standing indoors",
+      "instructions": "Use in the About or Culture section."
+    },
+    "services_visuals": [
+      {
+        "url": "https://images.unsplash.com/photo-1748439435495-722cc1728b7e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBjaGFydCUyMGRlc2t8ZW58MHx8fHwxNzc2MTQ0MDUxfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Financial charts and trading desk",
+        "instructions": "Use for Financial Advisory or Market Research service cards/modals."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1758691737158-18ffa31c0a46?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMG1lZXRpbmclMjBkaXZlcnNlJTIwdGVhbXxlbnwwfHx8fDE3NzYxNDQwNTF8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Team collaborating on laptop",
+        "instructions": "Use for Business Consulting or Startup Consulting sections."
+      }
+    ],
+    "gallery_images": [
+      "https://images.unsplash.com/photo-1714601344981-75e003bc5d18?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBidWlsZGluZyUyMGdsYXNzfGVufDB8fHx8MTc3NjE0NDA1MXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1694702702714-a48c5fabdaf3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBvZmZpY2UlMjBidWlsZGluZyUyMGdsYXNzfGVufDB8fHx8MTc3NjE0NDA1MXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1739298061766-e2751d92e9db?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1lZXRpbmclMjBkaXZlcnNlJTIwdGVhbXxlbnwwfHx8fDE3NzYxNDQwNTF8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1660075235409-ac9de82d2b4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMGJ1aWxkaW5nJTIwYmx1ZXxlbnwwfHx8fDE3NzYxNDQwNjN8MA&ixlib=rb-4.1.0&q=85"
+    ]
+  },
+  "sections_instructions": {
+    "Hero": "Full viewport height. Background image with deep navy overlay (bg-[#0A192F]/70). Left-aligned typography. H1: 'Smart Solutions for Modern Businesses'. CTA: 'Book a Consultation' (Solid white button, navy text).",
+    "AboutUs": "Split layout. Left: Sticky section with 'About VM Consultancy' and intro text. Right: Scrollable content including Founder (Purnendu Shankar Upadhyay) bio, Mission, and Vision. Use large asymmetrical padding.",
+    "Services": "Implement a dense 'Technical Grid' (border-collapse, 1px borders between items). 5 Cards: Business Consulting, Financial Advisory, Startup Consulting, Market Research, Operational Strategy. Incorporate minimal lucide-react icons.",
+    "Portfolio": "Use an interactive horizontal scroll (framer-motion) or bento grid to display case studies and impact metrics. Focus on numbers (e.g., '30% Revenue Growth').",
+    "Testimonials": "Typographic focus. Massive serif quotation marks in the background (text-[#F1F5F9]). Clean author attribution below.",
+    "Gallery": "Masonry CSS grid of the provided gallery_images. Add subtle black/white to color transition on hover.",
+    "Contact": "Two-column bento. Left: Address, Phone, Email, Socials on a deep navy background card. Right: Clean Shadcn form on white background. Embed Google Map taking full width below.",
+    "Footer": "Massive padding (py-24), bg-[#0A192F]. Large typography for 'Let's Talk' CTA. Clean link lists."
+  },
+  "testing_requirements": "All interactive elements (buttons, form inputs, navigation links) MUST include data-testid attributes."
+}

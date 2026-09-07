@@ -1,0 +1,188 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Heart,
+  HeartPulse,
+  Car,
+  Home,
+  Plane,
+  Building2,
+  ArrowRight,
+  Shield,
+} from "lucide-react";
+
+const insuranceTypes = [
+  {
+    icon: Heart,
+    title: "Life Insurance",
+    desc: "Secure your family's future with comprehensive life insurance plans. Term life, endowment, whole life, and ULIP options available.",
+    color: "bg-rose-50",
+    iconColor: "text-rose-600",
+  },
+  {
+    icon: HeartPulse,
+    title: "Health Insurance",
+    desc: "Protect yourself against medical expenses with individual, family floater, and critical illness health insurance coverage.",
+    color: "bg-emerald-50",
+    iconColor: "text-emerald-600",
+  },
+  {
+    icon: Car,
+    title: "Vehicle Insurance",
+    desc: "Comprehensive and third-party motor insurance for cars, two-wheelers, and commercial vehicles with hassle-free claims.",
+    color: "bg-blue-50",
+    iconColor: "text-blue-600",
+  },
+  {
+    icon: Home,
+    title: "Home Loan",
+    desc: "Safeguard your property against natural disasters, fire, theft, and structural damage with tailored home insurance plans.",
+    color: "bg-amber-50",
+    iconColor: "text-amber-600",
+  },
+  {
+    icon: Plane,
+    title: "Mutual Fund SIP",
+    desc: "---",
+    color: "bg-violet-50",
+    iconColor: "text-violet-600",
+  },
+  {
+    icon: Building2,
+    title: "GST ITR",
+    desc: "---",
+    color: "bg-sky-50",
+    iconColor: "text-sky-600",
+  },
+];
+
+export default function InsuranceSection() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const scrollTo = (id) => {
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <section id="insurance" data-testid="insurance-section" className="py-24 md:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12" ref={ref}>
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+          <div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.5 }}
+              className="flex items-center gap-2 mb-4"
+            >
+              <Shield className="w-4 h-4 text-[#0A192F]" />
+              <p className="text-xs tracking-[0.2em] uppercase font-semibold text-[#64748B]">
+                Our Core Expertise
+              </p>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl tracking-tight font-semibold text-[#0F172A] mb-3"
+              style={{ fontFamily: "'Satoshi', sans-serif" }}
+            >
+              Insurance Advisory
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="text-base leading-relaxed text-[#475569] max-w-xl"
+            >
+              We help you choose the right insurance for every stage of life and business. Expert guidance across all major insurance categories.
+            </motion.p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Button
+              data-testid="insurance-cta"
+              onClick={() => scrollTo("#contact")}
+              className="rounded-none bg-[#0A192F] text-white hover:bg-[#0F2646] px-8 py-5 text-sm font-medium"
+            >
+              Get Free Quote
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </motion.div>
+        </div>
+
+        {/* Insurance cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {insuranceTypes.map((ins, i) => {
+            const Icon = ins.icon;
+            return (
+              <motion.div
+                key={ins.title}
+                initial={{ opacity: 0, y: 25 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+                className="border border-[#E2E8F0] p-8 group service-card bg-white"
+                data-testid={`insurance-card-${ins.title.replace(/\s+/g, '-').toLowerCase()}`}
+              >
+                <div className={`w-14 h-14 ${ins.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className={`w-6 h-6 ${ins.iconColor}`} />
+                </div>
+                <h3
+                  className="text-lg font-semibold text-[#0F172A] mb-3"
+                  style={{ fontFamily: "'Satoshi', sans-serif" }}
+                >
+                  {ins.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-[#475569] mb-5">
+                  {ins.desc}
+                </p>
+                <button
+                  onClick={() => scrollTo("#contact")}
+                  className="text-xs font-semibold uppercase tracking-[0.1em] text-[#0A192F] hover:text-[#0F2646] transition-colors flex items-center gap-1 group/link"
+                  data-testid={`insurance-enquire-${ins.title.replace(/\s+/g, '-').toLowerCase()}`}
+                >
+                  Enquire Now
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                </button>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Trust banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-12 bg-[#0A192F] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6"
+          data-testid="insurance-trust-banner"
+        >
+          <div>
+            <h3
+              className="text-xl md:text-2xl font-semibold text-white mb-2"
+              style={{ fontFamily: "'Satoshi', sans-serif" }}
+            >
+              Not sure which insurance is right for you?
+            </h3>
+            <p className="text-sm text-white/60">
+              We will analyze your needs and recommend the best plan — absolutely free.
+            </p>
+          </div>
+          <Button
+            data-testid="insurance-consult-btn"
+            onClick={() => scrollTo("#contact")}
+            className="rounded-none bg-white text-[#0A192F] hover:bg-white/90 px-8 py-5 text-sm font-medium flex-shrink-0"
+          >
+            Free Consultation
+          </Button>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
