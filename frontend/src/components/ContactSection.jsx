@@ -109,11 +109,10 @@ export default function ContactSection() {
                 className="text-2xl font-semibold text-white mb-6"
                 style={{ fontFamily: "'Satoshi', sans-serif" }}
               >
-                Let's discuss your project
+                Let’s Plan Your Protection.
               </h3>
               <p className="text-sm text-white/60 leading-relaxed mb-10">
-                Ready to take your business to the next level? Reach out and let
-                us craft a strategy tailored to your goals.
+                Plan with confidence. Connect with us to explore solutions designed around your protection and financial goals.
               </p>
             </div>
 
@@ -142,7 +141,7 @@ export default function ContactSection() {
                   <p className="text-xs uppercase tracking-[0.15em] text-white/40 mb-1">
                     Phone
                   </p>
-                  <p className="text-sm text-white/80">+91 9450581966</p>
+                  <p className="text-sm text-white/80">+91 9450581966, +91 8299824757</p>
                 </div>
               </div>
               <div
@@ -252,14 +251,4 @@ export default function ContactSection() {
       </div>
     </section>
   );
-}
-{
-  /* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.775717089388!2d82.98332507484112!3d25.311738427052855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2dfda5a6f119%3A0x1fe4474f9a91050b!2sChandrika%20Apartment%2C%20D%2064%2F95%20A%2C%20near%20Casamila%20Restaurant%2C%20Sigra%2C%20Varanasi%2C%20Uttar%20Pradesh%20221002!5e0!3m2!1sen!2sin!4v1776489717728!5m2!1sen!2sin" 
-width="600" 
-height="450" 
-style="border:0;" 
-allowfullscreen="" 
-loading="lazy" 
-referrerpolicy="no-referrer-when-downgrade">
-</iframe> */
 }

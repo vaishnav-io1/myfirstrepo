@@ -1,16 +1,22 @@
 import { Separator } from "@/components/ui/separator";
 import { ArrowUpRight } from "lucide-react";
+const socialLinks = {
+  LinkedIn: process.env.REACT_APP_LINKEDIN_URL,
+  Twitter: process.env.REACT_APP_TWITTER_URL,
+  Facebook: process.env.REACT_APP_FACEBOOK_URL,
+  Instagram: process.env.REACT_APP_INSTAGRAM_URL,
+};
 
 const footerLinks = {
   Insurance: [
     "Life Insurance",
     "Health Insurance",
     "Motor Insurance",
-    "Home Insurance",
-    "Travel Insurance",
-    "Business Insurance",
+    "General Insurance",
+    "Home Loan",
+    "Mutual Fund (SIP)",
   ],
-  Company: ["Insurance", "About Us", "Expertise", "Careers", "Contact"],
+  Company: ["Insurance", "About Us", "Careers", "Contact"],
   Connect: ["LinkedIn", "Twitter", "Facebook", "Instagram"],
 };
 
@@ -23,7 +29,6 @@ export default function Footer() {
   const sectionMap = {
     "Insurance": "#insurance",
     "About Us": "#about",
-    "Expertise": "#expertise",
     "Careers": "#careers",
     "Contact": "#contact",
   };
@@ -41,7 +46,7 @@ export default function Footer() {
               className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-white"
               style={{ fontFamily: "'Satoshi', sans-serif" }}
             >
-              Let's Talk
+              Do Your Duty. Let Excellence Follow.
             </h2>
           </div>
           <a
@@ -70,7 +75,8 @@ export default function Footer() {
               VM Consultancy
             </a>
             <p className="text-sm text-white/40 leading-relaxed">
-              Your Trusted Insurance Advisor
+              MSME Registered Enterprise | Government of India <br/><br/>
+              D 64/95 A Chandrika Apartment, Sigra,Varanasi
             </p>
           </div>
 
@@ -93,11 +99,13 @@ export default function Footer() {
                       </a>
                     ) : (
                       <a
-                        href="#"
+                        href={socialLinks[link] || "#"}
+                        target={socialLinks[link] ? "_blank" : undefined}
+                        rel={socialLinks[link] ? "noopener noreferrer" : undefined}
                         data-testid={`footer-link-${link.replace(/\s+/g, '-').toLowerCase()}`}
                         className="text-sm text-white/60 hover:text-white transition-colors"
-                      >
-                        {link}
+                        >
+                          {link}
                       </a>
                     )}
                   </li>

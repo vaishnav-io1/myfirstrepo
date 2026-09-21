@@ -145,7 +145,7 @@ export default function ServicesSection() {
                     </motion.div>
                   );
                 })}
-                {/* CTA cell */}
+                {/* CTA cell
                 <div className="bg-[#0A192F] p-8 md:p-10 flex flex-col justify-center">
                   <p className="text-2xl font-bold text-white tracking-tight mb-3" style={{ fontFamily: "'Satoshi', sans-serif" }}>
                     Need a custom solution?
@@ -153,7 +153,7 @@ export default function ServicesSection() {
                   <p className="text-sm text-white/60">
                     We tailor our approach to your unique business needs across all domains.
                   </p>
-                </div>
+                </div> */}
               </div>
             </TabsContent>
           ))}

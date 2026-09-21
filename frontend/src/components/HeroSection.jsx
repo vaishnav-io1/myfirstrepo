@@ -42,18 +42,22 @@ export default function HeroSection() {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter text-white leading-[1.1] mb-6"
             style={{ fontFamily: "'Satoshi', sans-serif" }}
           >
-            Your Trusted Insurance Advisor
+            21 Years of Perseverance, Trust & Service
           </h1>
           <p
             data-testid="hero-description"
             className="text-base sm:text-lg text-white/70 leading-relaxed mb-10 max-w-lg"
           >
-            VM Consultancy is your one-stop destination for all types of insurance — Life, Health, Motor, Home, Travel & Business. Expert advisory backed by 15+ years of experience.
+            From Life and Health to Motor, Home, Travel, and Business,VM Consultancy has provided dependable insurance guidance and comprehensive protection solutions for individuals, families, and businesses.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               data-testid="hero-cta-button"
-              onClick={() => scrollTo("#insurance")}
+              onClick={() => window.open("https://www.licindia.in/insurance-plan/", // URL
+                                         "_blank",                   // open in a new tab
+                                         "noopener,noreferrer"       // security/privacy options
+                                        )
+                     }
               className="rounded-none bg-white text-[#0A192F] hover:bg-white/90 px-8 py-6 text-sm font-medium"
             >
               Explore Insurance Plans
@@ -79,8 +83,7 @@ export default function HeroSection() {
         >
           {[
             { num: "21", label: "Years Experience" },
-            { num: "5000+", label: "Policies Served" },
-            { num: "6", label: "Insurance Types" },
+            { num: "1200+", label: "Policies Served" },
             { num: "98%", label: "Client Satisfaction" },
           ].map((stat) => (
             <div key={stat.label} data-testid={`hero-stat-${stat.label.replace(/\s+/g, '-').toLowerCase()}`}>

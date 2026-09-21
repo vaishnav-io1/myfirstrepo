@@ -6,9 +6,10 @@ import {
   HeartPulse,
   Car,
   Home,
-  Plane,
+  TrendingUp,
   Building2,
   ArrowRight,
+  ExternalLink,
   Shield,
 } from "lucide-react";
 
@@ -19,6 +20,18 @@ const insuranceTypes = [
     desc: "Secure your family's future with comprehensive life insurance plans. Term life, endowment, whole life, and ULIP options available.",
     color: "bg-rose-50",
     iconColor: "text-rose-600",
+    companies: [
+      {
+        id: "lic",
+        name: "LIC",
+        url: process.env.REACT_APP_LIC_URL,
+      },
+      {
+        id: "hdfc-life",
+        name: "HDFC Life",
+        url: process.env.REACT_APP_HDFC_LIFE_URL,
+      },
+    ],
   },
   {
     icon: HeartPulse,
@@ -26,35 +39,127 @@ const insuranceTypes = [
     desc: "Protect yourself against medical expenses with individual, family floater, and critical illness health insurance coverage.",
     color: "bg-emerald-50",
     iconColor: "text-emerald-600",
+    companies: [
+      {
+        id: "star-health",
+        name: "Star Health Insurance",
+        url: process.env.REACT_APP_STAR_HEALTH_URL,
+      },
+      {
+        id: "care-health",
+        name: "Care Health Insurance",
+        url: process.env.REACT_APP_CARE_HEALTH_URL,
+      },
+      {
+        id: "niva-bupa",
+        name: "Niva Bupa",
+        url: process.env.REACT_APP_NIVA_BUPA_URL,
+      },
+    ],
+  },
+
+  {
+    icon: Home,
+    title: "Home Loan",
+    desc: "Explore home financing options and get guidance on eligibility, documentation, and repayment terms.",
+    color: "bg-amber-50",
+    iconColor: "text-amber-600",
+    companies: [
+      {
+        id: "muthoot",
+        name: "Muthoot Finance",
+        url: process.env.REACT_APP_MUTHOOT_URL,
+      },
+      {
+        id: "piramal",
+        name: "Piramal",
+        url: process.env.REACT_APP_PIRAMAL_URL,
+      },
+      {
+        id: "lic-housing",
+        name: "LIC Housing Finance",
+        url: process.env.REACT_APP_LIC_HOUSING_URL,
+      },
+    ],
   },
   {
+    icon: TrendingUp,
+    title: "Mutual Funds (SIP)",
+    desc: "Explore mutual fund options and systematic investment plans suited to your financial goals and risk tolerance. Investments are subject to market risks.",
+    color: "bg-teal-50",
+    iconColor: "text-teal-600",
+    companies: [
+      {
+        id: "sbi-mf",
+        name: "SBI",
+        url: process.env.REACT_APP_SBI_MF_URL,
+      },
+      {
+        id: "canara-mf",
+        name: "Canara Robeco",
+        url: process.env.REACT_APP_CANARA_MF_URL,
+      },
+      {
+        id: "uti-mf",
+        name: "UTI",
+        url: process.env.REACT_APP_UTI_MF_URL,
+      },
+      {
+        id: "franklin-mf",
+        name: "Franklin Templeton",
+        url: process.env.REACT_APP_FRANKLIN_MF_URL,
+      },
+      {
+        id: "mirae-mf",
+        name: "Mirae Asset",
+        url: process.env.REACT_APP_MIRAE_MF_URL,
+      },
+      {
+        id: "axis-mf",
+        name: "Axis",
+        url: process.env.REACT_APP_AXIS_MF_URL,
+      },
+      {
+        id: "kotak-mf",
+        name: "Kotak",
+        url: process.env.REACT_APP_KOTAK_MF_URL,
+      },
+      {
+        id: "icici-mf",
+        name: "ICICI Prudential",
+        url: process.env.REACT_APP_ICICI_MF_URL,
+      },
+    ],
+  },
+  {
+    icon: Building2,
+    title: "General Insurance",
+    desc: "Explore non-life insurance options to protect your assets and business against covered risks.",
+    color: "bg-sky-50",
+    iconColor: "text-sky-600",
+    companies: [
+      {
+        id: "new-india",
+        name: "New India Assurance",
+        url: process.env.REACT_APP_NEW_INDIA_URL,
+      },
+      {
+        id: "hdfc-ergo",
+        name: "HDFC ERGO",
+        url: process.env.REACT_APP_HDFC_ERGO_URL,
+      },
+    ],
+  },
+  
+  // Existing Motor Insurance card remains unchanged.
+  {
     icon: Car,
-    title: "Vehicle Insurance",
+    title: "Motor Insurance",
     desc: "Comprehensive and third-party motor insurance for cars, two-wheelers, and commercial vehicles with hassle-free claims.",
     color: "bg-blue-50",
     iconColor: "text-blue-600",
   },
-  {
-    icon: Home,
-    title: "Home Loan",
-    desc: "Safeguard your property against natural disasters, fire, theft, and structural damage with tailored home insurance plans.",
-    color: "bg-amber-50",
-    iconColor: "text-amber-600",
-  },
-  {
-    icon: Plane,
-    title: "Mutual Fund SIP",
-    desc: "---",
-    color: "bg-violet-50",
-    iconColor: "text-violet-600",
-  },
-  {
-    icon: Building2,
-    title: "GST ITR",
-    desc: "---",
-    color: "bg-sky-50",
-    iconColor: "text-sky-600",
-  },
+
 ];
 
 export default function InsuranceSection() {
@@ -90,7 +195,7 @@ export default function InsuranceSection() {
               className="text-3xl sm:text-4xl tracking-tight font-semibold text-[#0F172A] mb-3"
               style={{ fontFamily: "'Satoshi', sans-serif" }}
             >
-              Insurance Advisory
+              Insurance & Financial Services
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
@@ -98,10 +203,10 @@ export default function InsuranceSection() {
               transition={{ duration: 0.6, delay: 0.15 }}
               className="text-base leading-relaxed text-[#475569] max-w-xl"
             >
-              We help you choose the right insurance for every stage of life and business. Expert guidance across all major insurance categories.
+              Explore insurance, home loan, and mutual fund options with guidance tailored to your needs.
             </motion.p>
           </div>
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -114,7 +219,7 @@ export default function InsuranceSection() {
               Get Free Quote
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Insurance cards grid */}
@@ -142,6 +247,71 @@ export default function InsuranceSection() {
                 <p className="text-sm leading-relaxed text-[#475569] mb-5">
                   {ins.desc}
                 </p>
+                
+
+
+{ins.companies?.length > 0 && (
+  <div
+    className="mb-6 border-t border-[#E2E8F0] pt-4"
+    data-testid={`insurance-companies-${i}`}
+  >
+    {/* <p className="mb-3 text-xs font-medium text-[#64748B]">
+      Explore company websites
+    </p> */}
+
+    <ul className="flex flex-wrap gap-2">
+      {ins.companies.map((company) => (
+        <li key={company.id} className="min-w-0 max-w-full">
+          <a
+            href={company.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${company.name} website (opens in a new tab)`}
+            title={`${company.name} — opens in a new tab`}
+            data-testid={`company-link-${company.id}`}
+            className="
+              inline-flex min-h-11 max-w-full items-center gap-2
+              rounded-sm border border-[#E2E8F0]
+              bg-[#F8FAFC] px-3 py-2
+              text-xs font-medium text-[#0A192F]
+              transition-colors
+              hover:border-[#94A3B8] hover:bg-[#F1F5F9]
+              focus-visible:outline-none focus-visible:ring-2
+              focus-visible:ring-[#0A192F] focus-visible:ring-offset-2
+            "
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/logos/${company.id}.png`}
+              alt=""
+              width={32}
+              height={24}
+              loading="lazy"
+              data-testid={`company-logo-${company.id}`}
+              className="h-6 w-8 shrink-0 object-contain"
+              onError={(event) => {
+                event.currentTarget.style.display = "none";
+              }}
+            />
+
+            <span className="min-w-0 break-words">
+              {company.name}
+            </span>
+
+            <ExternalLink
+              className="h-3.5 w-3.5 shrink-0 text-[#64748B]"
+              aria-hidden="true"
+            />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
+
+
+
+
                 <button
                   onClick={() => scrollTo("#contact")}
                   className="text-xs font-semibold uppercase tracking-[0.1em] text-[#0A192F] hover:text-[#0F2646] transition-colors flex items-center gap-1 group/link"
@@ -155,7 +325,7 @@ export default function InsuranceSection() {
           })}
         </div>
 
-        {/* Trust banner */}
+        {/* Trust banner
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -181,7 +351,7 @@ export default function InsuranceSection() {
           >
             Free Consultation
           </Button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

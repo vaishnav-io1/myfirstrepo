@@ -131,3 +131,99 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #0A192F;
 }
+
+
+/* Hiring announcement strip */
+.hiring-alert {
+  width: 100%;
+  margin-top: 12px;
+  overflow: hidden;
+  background: #0a192f;
+  color: #ffffff;
+  border-block: 1px solid #23364f;
+}
+
+.hiring-alert-track {
+  display: flex;
+  width: max-content;
+  animation: hiring-scroll-left 20s linear infinite;
+}
+
+.hiring-alert-message {
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 100vw;
+  min-height: 44px;
+  padding: 10px 24px;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.hiring-alert-message a {
+  color: #fbbf24;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 150ms ease;
+}
+
+.hiring-alert-message a:hover {
+  color: #ffffff;
+}
+
+.hiring-alert-message a:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Pause when hovered or when a link has keyboard focus */
+.hiring-alert:hover .hiring-alert-track,
+.hiring-alert:focus-within .hiring-alert-track {
+  animation-play-state: paused;
+}
+
+@keyframes hiring-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Smaller text and spacing on mobile */
+@media (max-width: 640px) {
+  .hiring-alert-message {
+    min-height: 40px;
+    padding: 9px 16px;
+    gap: 8px;
+    font-size: 12px;
+  }
+}
+
+/* Respect the visitor's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hiring-alert-track {
+    width: 100%;
+    animation: none;
+  }
+
+  .hiring-alert-message {
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .hiring-alert-message[aria-hidden="true"] {
+    display: none;
+  }
+}
