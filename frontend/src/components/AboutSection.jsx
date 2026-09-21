@@ -60,7 +60,7 @@ export default function AboutSection() {
               Founder & Chief Insurance Advisor
             </p>
             <p className="text-base leading-relaxed text-[#475569]">
-              With over 15 years of experience in insurance advisory and cross-industry consulting, Purnendu has built VM Consultancy into a trusted name — specializing in insurance guidance while also bridging business strategy, technology education, and pharmaceutical services.
+              With over 21 years of experience in insurance advisory and cross-industry consulting, Purnendu has built VM Consultancy into a trusted name — specializing in insurance guidance while also bridging business strategy, technology education, and pharmaceutical services.
             </p>
           </motion.div>
 

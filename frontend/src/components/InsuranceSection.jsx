@@ -26,11 +26,11 @@ const insuranceTypes = [
         name: "LIC",
         url: process.env.REACT_APP_LIC_URL,
       },
-      {
-        id: "hdfc-life",
-        name: "HDFC Life",
-        url: process.env.REACT_APP_HDFC_LIFE_URL,
-      },
+      // {
+      //   id: "hdfc-life",
+      //   name: "HDFC Life",
+      //   url: process.env.REACT_APP_HDFC_LIFE_URL,
+      // },
     ],
   },
   {
