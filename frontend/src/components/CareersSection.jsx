@@ -45,22 +45,22 @@ const jobs = [
     type: "Full-time",
     desc: "Manage daily operations, coordinate with clients, handle documentation, and support smooth office functioning.",
   },
-  // {
-  //   title: "Pharma Consultant",
-  //   domain: "Pharmaceutical",
-  //   icon: FlaskConical,
-  //   location: "Varanasi, India",
-  //   type: "Full-time",
-  //   desc: "Provide regulatory and market-access consulting for pharmaceutical clients, ensuring compliance and growth.",
-  // },
-  // {
-  //   title: "Digital Marketing Executive",
-  //   domain: "Consulting",
-  //   icon: Briefcase,
-  //   location: "Remote",
-  //   type: "Contract",
-  //   desc: "Plan and execute digital marketing campaigns for VM Consultancy and its partner organizations.",
-  // },
+  {
+    title: "City Career Agent (CCA)",
+    domain: "Insurance",
+    icon: Briefcase,
+    location: "Remote",
+    type: "Part-time",
+    desc: "Develop urban markets, build client relationships, identify opportunities, and provide personalized insurance guidance.",
+  },
+  {
+    title: "Rural Career Agent (RCA)",
+    domain: "Insurance",
+    icon: Briefcase,
+    location: "Remote",
+    type: "Part-time",
+    desc: "Develop rural markets, build customer relationships, generate business opportunities, and provide insurance guidance.",
+  },
 ];
 
 export default function CareersSection() {
